@@ -1,9 +1,10 @@
-CXX ?= g++
-NAVIO = ../../Navio
-INCLUDES = -I ../..
+include $(PWD)/config.mk
+FOLDER_NAME = examples/AHRS
 
-all:
-	$(CXX) $(INCLUDES) AHRS.cpp $(NAVIO)/MPU9250.cpp $(NAVIO)/LSM9DS1.cpp $(NAVIO)/Util.cpp -o AHRS -lrt -lpthread
+SRCS = $(wildcard *.cpp)
+EXES = $(SRCS:.cpp=)
 
-clean:
-	rm AHRS
+default: $(EXES)
+
+%: %.cpp
+		$(MAKE_EXAMPLE)

@@ -1,9 +1,10 @@
-CXX ?= g++
-NAVIO = ../../Navio
-INCLUDES = -I ../..
+include $(PWD)/config.mk
+FOLDER_NAME = examples/ADC
 
-all:
-	$(CXX) -std=gnu++11 $(INCLUDES) ADC.cpp $(NAVIO)/Util.cpp $(NAVIO)/ADC.cpp -o ADC
+SRCS = $(wildcard *.cpp)
+EXES = $(SRCS:.cpp=)
 
-clean:
-	rm ADC
+default: $(EXES)
+
+%: %.cpp
+		$(MAKE_EXAMPLE)

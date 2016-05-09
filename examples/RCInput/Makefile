@@ -1,9 +1,10 @@
-CXX ?= g++
-NAVIO = ../../Navio
-INCLUDES = -I ../..
+include $(PWD)/config.mk
+FOLDER_NAME = examples/RCInput
 
-all:
-	$(CXX) -std=gnu++11 $(INCLUDES) main.cpp $(NAVIO)/Util.cpp $(NAVIO)/RCInput.cpp -o RCInput
+SRCS = $(wildcard *.cpp)
+EXES = $(SRCS:.cpp=)
 
-clean:
-	rm RCInput
+default: $(EXES)
+
+%: %.cpp
+		$(MAKE_EXAMPLE)

@@ -1,9 +1,10 @@
-CXX ?= g++
-NAVIO = ../../Navio
-INCLUDES = -I ../..
+include $(PWD)/config.mk
+FOLDER_NAME = examples/Servo
 
-all:
-	$(CXX) -std=gnu++11 $(INCLUDES) Servo.cpp $(NAVIO)/PWM.cpp $(NAVIO)/Util.cpp -o Servo
+SRCS = $(wildcard *.cpp)
+EXES = $(SRCS:.cpp=)
 
-clean:
-	rm Servo
+default: $(EXES)
+
+%: %.cpp
+		$(MAKE_EXAMPLE)

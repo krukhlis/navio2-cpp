@@ -1,15 +1,12 @@
-MODULES = AccelGyroMag ADC AHRS Barometer GPS LED2 Servo RCInput
+include $(PWD)/config.mk
+FOLDER_NAME = examples
 
 all:
-	for dir in $(MODULES); do \
-	cd $$dir; \
-	($(MAKE) ); \
-	cd ..; \
-	done
-	
-clean:
-	for dir in $(MODULES); do \
-	cd $$dir; \
-	($(MAKE) clean); \
-	cd ..; \
-	done
+	@make -s -C AccelGyroMag
+	# @make -s -C ADC
+	@make -s -C AHRS
+	@make -s -C Barometer
+	@make -s -C GPS
+	@make -s -C LED2
+	@make -s -C Servo
+	@make -s -C RCInput

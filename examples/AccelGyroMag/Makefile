@@ -1,9 +1,10 @@
-CXX ?= g++
-NAVIO = ../../Navio
-INCLUDES = -I ../..
+include $(PWD)/config.mk
+FOLDER_NAME = examples/AccelGyroMag
 
-all:
-	$(CXX) $(INCLUDES) $(NAVIO)/LSM9DS1.cpp $(NAVIO)/MPU9250.cpp $(NAVIO)/Util.cpp AccelGyroMag.cpp -o AccelGyroMag
+SRCS = $(wildcard *.cpp)
+EXES = $(SRCS:.cpp=)
 
-clean:
-	rm -f AccelGyroMag
+default: $(EXES)
+
+%: %.cpp
+		$(MAKE_EXAMPLE)

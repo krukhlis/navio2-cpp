@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <cstdio>
-#include <Navio/Util.h>
-#include <Navio/ADC.h>
+#include <navio2/Util.h>
+#include <navio2/ADC.h>
 
 int main(int argc, char *argv[])
 {
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
             printf("A%d: %.4fV ", i, results[i] / 1000);
         }
         printf("\n");
-        
+
         usleep(500000);
     }
 

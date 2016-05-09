@@ -1,10 +1,10 @@
-CXX ?= g++
-NAVIO = ../../Navio
-INCLUDES = -I ../..
-CFLAGS = -std=gnu++11
+include $(PWD)/config.mk
+FOLDER_NAME = examples/LED2
 
-all:
-	$(CXX) $(CFLAGS) $(INCLUDES) $(NAVIO)/gpio.cpp $(NAVIO)/RGBled.cpp $(NAVIO)/Util.cpp LED.cpp -o LED
+SRCS = $(wildcard *.cpp)
+EXES = $(SRCS:.cpp=)
 
-clean:
-	rm -f LED
+default: $(EXES)
+
+%: %.cpp
+		$(MAKE_EXAMPLE)

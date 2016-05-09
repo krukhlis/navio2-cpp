@@ -1,8 +1,8 @@
 #include <unistd.h>
 #include <cstdio>
 
-#include <Navio/RCInput.h>
-#include "Navio/Util.h"
+#include <navio2/RCInput.h>
+#include "navio2/Util.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,11 +14,11 @@ int main(int argc, char *argv[])
 
     rcin.init();
 
-    while (true) 
+    while (true)
     {
         int period = rcin.read(2);
         printf("%d\n", period);
-        
+
         sleep(1);
     }
 

@@ -7,7 +7,7 @@ twitter.com/emlidtech || www.emlid.com || info@emlid.com
 Application: Mahory AHRS algorithm supplied with data from MPU9250 and LSM9DS1.
 Outputs roll, pitch and yaw in the console and sends quaternion
 over the network - it can be used with 3D IMU visualizer located in
-Navio/Applications/3D IMU visualizer.
+navio2/Applications/3D IMU visualizer.
 
 To run this app navigate to the directory containing it and run following commands:
 make
@@ -30,9 +30,9 @@ chrt -f -p 99 PID
 #include <stdint.h>
 #include <unistd.h>
 #include <sys/time.h>
-#include "Navio/MPU9250.h"
-#include "Navio/LSM9DS1.h"
-#include "Navio/Util.h"
+#include "navio2/MPU9250.h"
+#include "navio2/LSM9DS1.h"
+#include "navio2/Util.h"
 #include "AHRS.hpp"
 
 #define G_SI 9.80665

@@ -9,8 +9,8 @@ make
 ./Barometer
 */
 
-#include "Navio/MS5611.h"
-#include "Navio/Util.h"
+#include "navio2/MS5611.h"
+#include "navio2/Util.h"
 #include <unistd.h>
 #include <stdio.h>
 
@@ -35,9 +35,9 @@ int main()
 
         barometer.calculatePressureAndTemperature();
 
-        printf("Temperature(C): %f Pressure(millibar): %f\n", 
+        printf("Temperature(C): %f Pressure(millibar): %f\n",
                 barometer.getTemperature(), barometer.getPressure());
-                
+
         sleep(1);
     }
 

@@ -2,7 +2,7 @@ include config.mk
 PREFIX="/usr/local"
 PROJECT="navio2"
 
-default: libnavio2 done
+default: libnavio2 navio_examples done
 
 mkdirs:
 	@mkdir -p $(LIB_DIR)
@@ -15,6 +15,9 @@ rmdirs:
 
 libnavio2: mkdirs
 	@make -s -C src
+
+navio_examples: mkdirs
+	@make -s -C examples
 
 debug: mkdirs
 	@make -C src
