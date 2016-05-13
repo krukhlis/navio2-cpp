@@ -11,7 +11,7 @@ EXAMPLES_BUILD_DIR = $(BUILD_DIR)/examples
 CC = g++
 FLAGS = -std=c++11 -Wall
 INCLUDES = -I/usr/include -I/usr/local/include -I$(PWD)/include
-LIBS = -lnavio2
+LIBS = -L$(PWD)/build/lib -lnavio2
 CFLAGS = $(FLAGS) $(INCLUDES)
 
 # ARCHIVER
