@@ -30,9 +30,10 @@ chrt -f -p 99 PID
 #include <stdint.h>
 #include <unistd.h>
 #include <sys/time.h>
-#include "navio2/MPU9250.h"
-#include "navio2/LSM9DS1.h"
-#include "navio2/Util.h"
+
+#include "MPU9250.h"
+#include "LSM9DS1.h"
+#include "Util.h"
 #include "AHRS.hpp"
 
 #define G_SI 9.80665

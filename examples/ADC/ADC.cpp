@@ -1,13 +1,18 @@
 #include <unistd.h>
 #include <cstdio>
-#include <navio2/Util.h>
-#include <navio2/ADC.h>
+#include <stdlib.h>
+
+#include "Util.h"
+#include "ADC.h"
+
 
 int main(int argc, char *argv[])
 {
-    ADC adc{};
+    ADC adc;
     adc.init();
-    float results[adc.get_channel_count()] = {0.0f};
+    float *results;
+
+    results = (float *) malloc(sizeof(float) * adc.get_channel_count());
 
     if (check_apm()) {
         return 1;

@@ -15,8 +15,8 @@ make
 */
 
 //#define _XOPEN_SOURCE 600
-#include "navio2/Ublox.h"
-#include "navio2/Util.h"
+#include "Ublox.h"
+#include "Util.h"
 
 using namespace std;
 

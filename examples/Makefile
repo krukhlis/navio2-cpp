@@ -3,7 +3,7 @@ FOLDER_NAME = examples
 
 all:
 	@make -s -C AccelGyroMag
-	# @make -s -C ADC
+	@make -s -C ADC
 	@make -s -C AHRS
 	@make -s -C Barometer
 	@make -s -C GPS

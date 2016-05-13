@@ -1,5 +1,5 @@
-#include "navio2/RGBled.h"
-#include "navio2/Util.h"
+#include "RGBled.h"
+#include "Util.h"
 
 int main()
 {

@@ -17,10 +17,11 @@ For print help:
 ./AccelGyroMag -h
 */
 
-#include "navio2/MPU9250.h"
-#include "navio2/LSM9DS1.h"
-#include "navio2/Util.h"
 #include <unistd.h>
+
+#include "MPU9250.h"
+#include "LSM9DS1.h"
+#include "Util.h"
 
 InertialSensor* create_inertial_sensor(char *sensor_name)
 {

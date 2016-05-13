@@ -14,12 +14,13 @@ sudo ./Servo
 */
 
 #include <unistd.h>
-#include "navio2/PWM.h"
-#include "navio2/Util.h"
+#include "PWM.h"
+#include "Util.h"
 
 #define PWM_OUTPUT 0
 #define SERVO_MIN 1.250 /*mS*/
 #define SERVO_MAX 1.750 /*mS*/
+
 
 int main()
 {
